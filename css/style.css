@@ -86,15 +86,14 @@ body {
   }
   
   .sponsor-track {
-    animation: scroll 20s linear infinite;
     display: flex;
     gap: 40px;
+    animation: scroll 20s linear infinite;
   }
   
-  .sponsor-logo {
-    height: 80px;
-    width: auto;
-    object-fit: contain;
+  /* Pause animation on hover */
+  .sponsor-carousel:hover .sponsor-track {
+    animation-play-state: paused;
   }
   
   /* Keyframe for scrolling logos */
@@ -125,6 +124,13 @@ body {
     }
   
     .sponsor-logo {
-      height: 60px;
-    }
+        height: 80px;
+        width: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+      
+      .sponsor-logo:hover {
+        transform: scale(1.05);
+      }
   }
